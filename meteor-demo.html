@@ -1,14 +1,21 @@
 <head>
-  <title>meteor-demo</title>
+    <title>meteor-demo</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+    <h1>Welcome to Meteor Demo!</h1> {{> leaderboard}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="leaderboard">
+    <div class="container">
+        <h3>Lets vote who's the best office</h3> {{> officers}}
+    </div>
+</template>
+
+<template name="officers">
+    <ul>
+        {{#each officers}}
+        <li><b>{{ name }}</b> {{ position }}</li>
+        {{/each}}
+    </ul>
 </template>
