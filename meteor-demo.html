@@ -14,8 +14,12 @@
 
 <template name="officers">
     <ul>
-        {{#each officers}}
-        <li><b>{{ name }}</b> {{ position }}</li>
-        {{/each}}
+        {{#each officers}} {{> officer}} {{/each}}
     </ul>
+    <button class="btn btn-primary">Vote</button>
+</template>
+
+<template name="officer">
+    <li class="officer-name {{selectedClass}}"><b>{{ name }}</b> {{ position }} : <em>{{ score }}</em>
+    </li>
 </template>
