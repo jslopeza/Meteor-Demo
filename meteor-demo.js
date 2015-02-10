@@ -10,7 +10,6 @@ if (Meteor.isClient) {
                 }
             });
         },
-
     });
 
     Template.officer.helpers({

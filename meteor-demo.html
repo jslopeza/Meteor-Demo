@@ -8,7 +8,8 @@
 
 <template name="leaderboard">
     <div class="container">
-        <h3>Lets vote who's the best office</h3> {{> officers}}
+        {{> loginButtons}}
+        <h3>Lets vote for the best officer</h3> {{> officers}}
     </div>
 </template>
 
@@ -16,10 +17,12 @@
     <ul>
         {{#each officers}} {{> officer}} {{/each}}
     </ul>
+    {{#if currentUser}}
     <button class="btn btn-primary">Vote</button>
+    {{/if}}
 </template>
 
 <template name="officer">
-    <li class="officer-name {{selectedClass}}"><b>{{ name }}</b> {{ position }} : <em>{{ score }}</em>
+    <li class="officer-name {{#if currentUser}} {{selectedClass}} {{/if}}"><b>{{ name }}</b> {{ position }} : <em>{{ score }}</em>
     </li>
 </template>
